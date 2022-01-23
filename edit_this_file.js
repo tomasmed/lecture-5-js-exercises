@@ -33,7 +33,6 @@
  * 
  */
 
-
 /**
  * Problem 7:
  * 
@@ -48,8 +47,8 @@
  * Problem 8:
  * 
  * An array called `fruits` already eists
- * Create the variable `fruitWithoutA` as an array that filters ouy the items 
- * in `fruits` that include the lowercase letter 'a'.
+ * Create the variable `fruitWithoutA` as an array that filters out the items 
+ * in `fruits` that include the lowercase or uppercase letter 'a'.
  * 
  * Hint: while this can be done with loops, this *can* be done in
  * a single (readable and well formatted) line. It's perfectly fine to do
@@ -75,5 +74,5 @@
 
 /* 
  * Problem 11: create a function `startTransitions` that adds
- * the attribute `data-transitions` to the element with id `transition-box`
+ * the attribute `data-transitions` (with a value of TRUE) to the element with id `transition-box`
 */

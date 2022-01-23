@@ -237,28 +237,25 @@ console.logs = [];
 /**
  * PROBLEM 7
  */
-
-
 const p7 = document.querySelector("#p7");
 if(!correct.includes(6)) {
     p7.textContent += 'Requires problem 6';
 } else {
-    let turnedGreen = true;
+    const green = [];
     setTimeout(() => {
         fruitListItems.forEach((item) => {
-          if (item.style.color !== 'green') {
-            turnedGreen = false;
+          if (item.style.color === 'green') {
+            green.push(item);
           }
         });
+        if (green.length === fruitListItems.length) {
+            p7.setAttribute("class", "correct");
+            p7.textContent += 'inline styles have made the items green';
+        } else {
+            p7.textContent += 'there are not inline styles making the items green';
+        }
     }, 50);
-    if (turnedGreen) {
-        p7.setAttribute("class", "correct");
-        p7.textContent += 'inline styles have made the items green';
-    } else {
-        p7.textContent += 'there are not inline styles making the items green';
-    }
 }
-//fruitWithoutA
 const p8 = document.querySelector("#p8");
 let p8_message = '';
 let fruitWithoutAExists = true;

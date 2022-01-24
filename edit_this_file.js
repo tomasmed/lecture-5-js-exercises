@@ -2,15 +2,18 @@
  * Problem 1: Assign the variable `thatBox` to 
  * represent the element with id `thebox`
  */
+const thatBox = document.querySelector('#thebox');
 
 /**
  * Problem 2: Write the text of `thatBox` to 
  * the console (using console.log)
  */
+console.log(thatBox.textContent);
 
 /**
  * Problem 3: Add the class `color-change` to `thatBox`
  */
+thatBox.classList.add('color-change');
 
 /**
  * Problem 4: Add the class `red` to `thatBox`. 
@@ -18,6 +21,11 @@
  * After 1 second, the `red` class should be removed and replaced with `blue`.
  * This every-second red/blue exchange should continue indefinitely
  */
+ thatBox.classList.add('red');
+ const intervalID = setInterval(function() { 
+    thatBox.classList.toggle("red");
+    thatBox.classList.toggle("blue");
+}, 1000);
 
 /**
 * Problem 5:
@@ -25,6 +33,7 @@
 * Create the variable `fruitListItems`. This should represent *all* 
 * list elements that are descendants of the element with id `fruit-list`
 */
+const fruitListItems = document.querySelectorAll('#fruit-list li');
 
 /**
  * Problem 6:
@@ -32,6 +41,9 @@
  * Iterate through `fruitListItems`, console log the text of each.
  * 
  */
+fruitListItems.forEach((fruit) => {
+  console.log(fruit.textContent);
+});
 
 /**
  * Problem 7:
@@ -42,6 +54,9 @@
  *   via an inline style.
  *  
  */
+ fruitListItems.forEach((fruit) => {
+    fruit.style.color = 'green';
+});
 
 /**
  * Problem 8:
@@ -54,13 +69,21 @@
  * a single (readable and well formatted) line. It's perfectly fine to do
  * this in a loop if that's your preference, though
  */
-
+const fruitWithoutA = fruits.filter(function(fruit) {
+    return  !(fruit.includes('a') || fruit.includes('A')); 
+  } 
+);
 
 /**
  * Problem 9:
  * Create a function `stopChanging` that cancels the interval created
  * in problem 4.
+ *  
+ * Then click the "stop changing colors"
  */
+function stopChanging() {
+    clearInterval(intervalID);
+}
 
 /**
  * Problem 10:
@@ -71,8 +94,16 @@
  * Move `traveler` into the element with the id `destination`
  * 
  */
+ const travelElement = document.querySelector('#traveler');
+document.querySelector('#destination').append(travelElement);
+
 
 /* 
  * Problem 11: create a function `startTransitions` that adds
  * the attribute `data-transitions` (with a value of TRUE) to the element with id `transition-box`
+ * 
+ * Then click run startTransitions()
 */
+function startTransitions() {
+  document.querySelector('#transition-box').setAttribute('data-transitions', true);
+}

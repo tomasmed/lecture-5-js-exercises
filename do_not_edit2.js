@@ -315,14 +315,16 @@ document.querySelector('#stop-changing-color').addEventListener('click', (e) => 
              }
 
          }, 300);
-         if (isSame ) {
-            p9.setAttribute("class", "correct");
-            correct.push(9);
-            p9.textContent = 'Problem 9: The color change stopped!';
-         } else {
-            p9.textContent = 'Problem 9: Seems like a color change is still happening.';
-         }
-       
+        setTimeout(() => {
+            if (isSame ) {
+                p9.setAttribute("class", "correct");
+                correct.push(9);
+                p9.textContent = 'Problem 9: The color change stopped!';
+             } else {
+                p9.textContent = 'Problem 9: Seems like a color change is still happening.';
+             }
+        }, 2400);
+    
     });
 });
 

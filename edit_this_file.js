@@ -2,18 +2,15 @@
  * Problem 1: Assign the variable `thatBox` to 
  * represent the element with id `thebox`
  */
-const thatBox = document.querySelector('#thebox');
 
 /**
  * Problem 2: Write the text of `thatBox` to 
  * the console (using console.log)
  */
-console.log(thatBox.textContent);
 
 /**
  * Problem 3: Add the class `color-change` to `thatBox`
  */
-thatBox.classList.add('color-change');
 
 /**
  * Problem 4: Add the class `red` to `thatBox`. 
@@ -21,11 +18,6 @@ thatBox.classList.add('color-change');
  * After 1 second, the `red` class should be removed and replaced with `blue`.
  * This every-second red/blue exchange should continue indefinitely
  */
- thatBox.classList.add('red');
- const intervalID = setInterval(function() { 
-    thatBox.classList.toggle("red");
-    thatBox.classList.toggle("blue");
-}, 1000);
 
 /**
 * Problem 5:
@@ -33,7 +25,6 @@ thatBox.classList.add('color-change');
 * Create the variable `fruitListItems`. This should represent *all* 
 * list elements that are descendants of the element with id `fruit-list`
 */
-const fruitListItems = document.querySelectorAll('#fruit-list li');
 
 /**
  * Problem 6:
@@ -41,9 +32,6 @@ const fruitListItems = document.querySelectorAll('#fruit-list li');
  * Iterate through `fruitListItems`, console log the text of each.
  * 
  */
-fruitListItems.forEach((fruit) => {
-  console.log(fruit.textContent);
-});
 
 /**
  * Problem 7:
@@ -54,9 +42,6 @@ fruitListItems.forEach((fruit) => {
  *   via an inline style.
  *  
  */
- fruitListItems.forEach((fruit) => {
-    fruit.style.color = 'green';
-});
 
 /**
  * Problem 8:
@@ -69,10 +54,6 @@ fruitListItems.forEach((fruit) => {
  * a single (readable and well formatted) line. It's perfectly fine to do
  * this in a loop if that's your preference, though
  */
-const fruitWithoutA = fruits.filter(function(fruit) {
-    return  !(fruit.includes('a') || fruit.includes('A')); 
-  } 
-);
 
 /**
  * Problem 9:
@@ -81,9 +62,6 @@ const fruitWithoutA = fruits.filter(function(fruit) {
  *  
  * Then click the "stop changing colors"
  */
-function stopChanging() {
-    clearInterval(intervalID);
-}
 
 /**
  * Problem 10:
@@ -94,9 +72,6 @@ function stopChanging() {
  * Move `traveler` into the element with the id `destination`
  * 
  */
- const travelElement = document.querySelector('#traveler');
-document.querySelector('#destination').append(travelElement);
-
 
 /* 
  * Problem 11: create a function `startTransitions` that adds
@@ -104,6 +79,3 @@ document.querySelector('#destination').append(travelElement);
  * 
  * Then click run startTransitions()
 */
-function startTransitions() {
-  document.querySelector('#transition-box').setAttribute('data-transitions', true);
-}
